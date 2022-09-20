@@ -1,0 +1,56 @@
+#!/bin/bash
+blacklist=("amd76x_edac" "vga16fb" "nouveau" "rivafb" "nvidiafb" "rivatv")
+tLen=${#blacklist[@]}
+
+# Detach console from framebuffer before rmmod
+#from: http://www.pimp-my-rig.com/2012/01/unload-nouveau-install-nvidia-driver.html
+# and: https://www.kernel.org/doc/Documentation/fb/fbcon.txt
+
+# running-in-container is part of upstart which is only available on ubuntu 12.04 and 14.04
+# virt-what does not support lxd on 12.04
+insidelxd="unknown"
+if [ -x "$(command -v running-in-container)" ]; then
+    if running-in-container | grep -q lxc; then # lxd container
+        insidelxd="true"
+    else
+        insidelxd="false"
+    fi
+else
+    if [ -x "$(command -v virt-what)" ]; then
+       if [[ $EUID -ne 0 ]]; then
+            echo "virt-what must be run as root"
+        else
+           if virt-what | grep -q lxc; then # lxd container
+               insidelxd="true"
+           else
+               insidelxd="false"
+           fi
+       fi
+    fi
+fi
+
+if [ "$insidelxd" == "true" ]; then # lxd container
+    echo "info: inside lxd container"
+else
+    echo 0 > /sys/class/vtconsole/vtcon1/bind
+fi
+
+for(( i=0; i < $tLen; i++ ))
+do
+    MODULE="${blacklist[$i]}"
+    numberOfInstances=`grep -c $MODULE /etc/modprobe.d/blacklist.conf`
+	
+    if (( ${numberOfInstances} < 1)); then
+	echo "blacklist $MODULE" >> /etc/modprobe.d/blacklist.conf
+	echo "blacklisting $MODULE"
+    else
+	echo "already blacklisted, skipping $MODULE"
+    fi
+
+    if lsmod | grep "$MODULE" &> /dev/null ; then
+	echo "$MODULE is loaded, unloading it"
+	rmmod $MODULE
+    else
+	echo "$MODULE is not loaded"
+    fi
+done
