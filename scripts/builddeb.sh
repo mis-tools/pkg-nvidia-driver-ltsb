@@ -179,7 +179,7 @@ chmod 775 $postfile
 
 echo "Creating .deb file: $packagefile"
 rm -f ${package}_*.deb
-fakeroot dpkg-deb --build $outdir $packagefile
+fakeroot dpkg-deb -Zxz --build $outdir $packagefile
 
 echo "Package info"
 dpkg -I $packagefile
