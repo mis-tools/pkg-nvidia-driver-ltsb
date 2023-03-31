@@ -36,7 +36,11 @@ version="515.65.01" # 20220920, never used
 
 # Security Bulletin November 2022:
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5415
-version="515.86.01" # 20221205
+version="515.86.01" # 20221205, never used
+
+# Security Bulletin March 2023:
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5452
+version="525.105.17" # 20230331
 
 echo "found version: $version"
 
