@@ -40,7 +40,11 @@ version="515.86.01" # 20221205, never used
 
 # Security Bulletin March 2023:
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5452
-version="525.105.17" # 20230331
+version="525.105.17" # 20230331, NR 2.7.1
+
+# Forum Announcement 20240224:
+# https://forums.developer.nvidia.com/t/linux-solaris-and-freebsd-driver-550-54-14-production-branch-release/283925
+version="550.54.14" # 20240228
 
 echo "found version: $version"
 
