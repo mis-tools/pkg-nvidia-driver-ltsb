@@ -44,7 +44,11 @@ version="525.105.17" # 20230331, NR 2.7.1
 
 # Forum Announcement 20240224:
 # https://forums.developer.nvidia.com/t/linux-solaris-and-freebsd-driver-550-54-14-production-branch-release/283925
-version="550.54.14" # 20240228
+version="550.54.14" # 20240228, NR 2.7.1 updated on 20240530 to resolve kernel build problem
+
+# Security Bulletin October 2024:
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5586
+version="550.127.05" # 20241024
 
 echo "found version: $version"
 
