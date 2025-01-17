@@ -48,7 +48,11 @@ version="550.54.14" # 20240228, NR 2.7.1 updated on 20240530 to resolve kernel b
 
 # Security Bulletin October 2024:
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5586
-version="550.127.05" # 20241024
+version="550.127.05" # 20241024, never used
+
+# Security Bulletin: NVIDIA GPU Display Driver - January 2025
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5614
+version="550.144.03" # 20250117
 
 echo "found version: $version"
 
