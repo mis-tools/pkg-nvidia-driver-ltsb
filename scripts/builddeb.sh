@@ -65,7 +65,7 @@ mkdir -p $debdir
 
 dwnedfile="$filename"
 if [ ! -f $dwnedfile ]; then
-    url="http://download.nvidia.com/XFree86/Linux-x86_64/$version/$filename"
+    url="https://download.nvidia.com/XFree86/Linux-x86_64/$version/$filename"
     echo "Downloading Nvidia drivers: $url as file: $dwnedfile"
     cmd="curl $url -o $dwnedfile"
     echo $cmd
