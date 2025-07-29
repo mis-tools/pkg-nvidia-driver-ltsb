@@ -55,7 +55,11 @@ version="550.127.05" # 20241024, never used
 version="550.144.03" # 20250117, never used
 
 # https://www.phoronix.com/news/NVIDIA-570.133.07-Linux-Driver
-version="570.133.07" # 20250319
+version="570.133.07" # 20250319, never used
+
+# Security Bulletin: NVIDIA GPU Display Driver - July 2025
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5670
+version="570.172.08" # 20250729
 
 echo "found version: $version"
 
