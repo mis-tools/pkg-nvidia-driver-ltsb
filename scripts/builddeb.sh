@@ -77,11 +77,9 @@ script_dir=$(dirname "$0")
 name="NVIDIA-Linux-x86_64-$version"
 filename="$name.run"
 outdir="debian"
-debdir="$outdir/DEBIAN"
 
 rm -rf $outdir
 mkdir -p $outdir
-mkdir -p $debdir
 
 dwnedfile="$filename"
 if [ ! -f $dwnedfile ]; then
@@ -105,6 +103,14 @@ rootdir="$outdir/${install_dir}/"
 mkdir -p $rootdir
 cp $dwnedfile $rootdir
 chmod +x $rootdir/$dwnedfile
+
+# calculate installedsize before creating DEBIAN subdir as this
+# is meta data that is not installed on the final system
+sync  # if sync is not run the `du -s` gives wrong output
+installedsize=`du -s ${outdir}/ | awk '{print $1}'`
+
+debdir="$outdir/DEBIAN"
+mkdir -p $debdir
 
 ctrlfile="$debdir/control"
 prefile="$debdir/preinst" 
@@ -151,8 +157,6 @@ if [ ! -z ${BUILD_NUMBER} ]; then
     echo "build number=${BUILD_NUMBER}"
     description="$description, build number=${BUILD_NUMBER}"
 fi
-
-installedsize=`du -s $outdir | awk '{print $1}'`
 
 #for format see: https://www.debian.org/doc/debian-policy/ch-controlfields.html
 cat > $ctrlfile << EOF |
