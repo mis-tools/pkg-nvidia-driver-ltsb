@@ -68,7 +68,11 @@ version="580.82.07" # 20250909, never used
 
 # Security Bulletin: NVIDIA GPU Display Driver - October 2025
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5703
-version="580.95.05" # 20251010
+version="580.95.05" # 20251010, never used
+
+# Security Bulletin: NVIDIA GPU Display Drivers - January 2026
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5747
+version="580.126.09" # 20260129
 
 echo "found version: $version"
 
