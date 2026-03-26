@@ -72,7 +72,12 @@ version="580.95.05" # 20251010, never used
 
 # Security Bulletin: NVIDIA GPU Display Drivers - January 2026
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5747
-version="580.126.09" # 20260129
+version="580.126.09" # 20260129, never used
+
+# https://www.phoronix.com/news/NVIDIA-595.58.03-Linux
+# From https://www.nvidia.com/en-us/drivers/unix/ on 20260325:
+# Latest Production Branch Version: 595.58.03
+version="595.58.03" # 20260326
 
 echo "found version: $version"
 
