@@ -77,7 +77,11 @@ version="580.126.09" # 20260129, never used
 # https://www.phoronix.com/news/NVIDIA-595.58.03-Linux
 # From https://www.nvidia.com/en-us/drivers/unix/ on 20260325:
 # Latest Production Branch Version: 595.58.03
-version="595.58.03" # 20260326
+version="595.58.03" # 20260326, never used
+
+# Security Bulletin: NVIDIA GPU Display Drivers - May 2026
+# https://nvidia.custhelp.com/app/answers/detail/a_id/5821
+version="595.71.05" # 20260520
 
 echo "found version: $version"
 
