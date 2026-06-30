@@ -81,7 +81,12 @@ version="595.58.03" # 20260326, never used
 
 # Security Bulletin: NVIDIA GPU Display Drivers - May 2026
 # https://nvidia.custhelp.com/app/answers/detail/a_id/5821
-version="595.71.05" # 20260520
+version="595.71.05" # 20260520, never used
+
+# https://ubuntuhandbook.org/index.php/2026/06/nvidia-595-84-linux-driver-released-with-fixes-for-many-games/
+# From https://www.nvidia.com/en-us/drivers/unix/ on 20260630:
+# Latest Production Branch Version: 595.84
+version="595.84"  # 20260630
 
 echo "found version: $version"
 
