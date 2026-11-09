@@ -86,7 +86,12 @@ version="595.71.05" # 20260520, never used
 # https://ubuntuhandbook.org/index.php/2026/06/nvidia-595-84-linux-driver-released-with-fixes-for-many-games/
 # From https://www.nvidia.com/en-us/drivers/unix/ on 20260630:
 # Latest Production Branch Version: 595.84
-version="595.84"  # 20260630
+version="595.84"  # 20260630, never used
+
+# https://www.phoronix.com/news/NVIDIA-620.70.06-Linux-Driver
+# From https://www.nvidia.com/en-us/drivers/unix/ on 20261105:
+# Latest Production Branch Version: 620.70.06
+version="620.70.06"  # 20261107
 
 echo "found version: $version"
 
