@@ -136,7 +136,7 @@ debdir="$outdir/DEBIAN"
 mkdir -p $debdir
 
 ctrlfile="$debdir/control"
-prefile="$debdir/preinst" 
+prefile="$debdir/preinst"
 postfile="$debdir/postinst"
 
 cwd=`pwd`
@@ -231,7 +231,7 @@ fi
 if [ "\$insidelxd" == "true" ]; then # lxd container
     cmd="/${install_dir}/$filename -a -q -ui=none --no-kernel-module"
 else
-    cmd="/${install_dir}/$filename -a -q --dkms -ui=none --no-install-compat32-libs"
+    cmd="/${install_dir}/$filename -a -q --dkms -ui=none --no-install-compat32-libs --no-wine-files --no-opengl-files --no-drm"
 fi
 
 echo \$cmd
